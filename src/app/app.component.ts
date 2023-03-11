@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http'
 import {Observable} from 'rxjs/'
 import {asteroids}  from './asteroids'
 import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { MatRadioButton } from '@angular/material/radio';
 
 
@@ -57,7 +58,7 @@ ngOnInit(){
 // variable qui récupère les deux champs du formulaire
 
 Criteria = this.formBuilder.group({
- firstName: ['0'],  
+ firstName: ['0',Validators.required],  
   danger: ['']
 });
 
