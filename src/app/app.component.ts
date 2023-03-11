@@ -16,6 +16,7 @@ import { MatRadioButton } from '@angular/material/radio';
 
 
 
+
 export class AppComponent implements OnInit {
 
   selected: string;
@@ -93,7 +94,12 @@ return parseFloat(valeur)
 }
 
 
+replacerHttp(url:string){
+
+return url.replace("http","https")
   
+}
+
 
 }
 

@@ -10,15 +10,16 @@ leur dangerosité par rapport à la Terre
 -->
 
 
-<div style="position:relative;width:100%;height:35px;background-color:#15803d;font-weight:bold;font-size:16px;
-line-height:25px;color:white;padding:5px; box-sizing: border-box;">
+<div style="position:relative;width:100%;height:65px;background-color:#15803d;font-weight:bold;font-size:34px;
+line-height:25px;color:white;padding:15px; box-sizing: border-box;">
 TEST PROGERIS
 
-<div style="padding:2px;line-height:9px;height:13px;text-align:center;width:100px;font-size:8px;position:absolute;font-weight:lighter;top:0px;left:calc(100% - 100px);background-color:transparent;">Adel Ben ahmed</div>
+
 </div> 
 <style>
-mat-form-field {  width: 20%; font-size: 9px;padding:3px;float:left; }
-mat-input {  width: 20%; font-size: 9px;padding:3px;float:left; }
+mat-form-field {  width: 20%; font-size: 22px;padding:3px;float:left; }
+mat-input {  width: 20%; font-size: 22px;padding:3px;float:left; }
+mat-label {  font-size: 22px;height:100px; }
 
 
 
@@ -27,31 +28,36 @@ mat-input {  width: 20%; font-size: 9px;padding:3px;float:left; }
   
 }
 
+build 
+
   </style>
 <!--début du formulaire-->
 
 <mat-form appearance="fill" [formGroup]="Criteria" class="form-container" style="padding:0px;margin-top:0px;">
   <mat-card style="padding:0px;margin-top:0px;">
     <mat-card-header style="padding:0px;margin-top:0px;">
-      <mat-card-title>Astéroïdes proches de la Terre</mat-card-title>
+      
     </mat-card-header>
     <mat-card-content>
      
    
 
-      <div class="row">
-        <div class="col-md-12">
+      
+
+
+        <div style="float: left;margin-right:50px;">
             <mat-radio-group  [(ngModel)]="selected" formControlName="danger" class="margin-left">
+              <mat-label>menace pour la terre :</mat-label>
                 <mat-radio-button  [value]="true"> dangereux </mat-radio-button>
-                <mat-radio-button [value]="false"> non dangereux </mat-radio-button>
-                <mat-radio-button #start [value]="0"> indifferent </mat-radio-button>
+                <mat-radio-button  [value]="false"> non dangereux </mat-radio-button>
+                <mat-radio-button  #start [value]="0"> indifferent </mat-radio-button>
             </mat-radio-group>
         </div>
    
 
 
 
-        <div class="col-md-6">
+        <div style="float: left" >
           <mat-form-field class="full-width" style="width:300px">
             <mat-label>Diamètre supérieur à (Km) :</mat-label>
             <input  type="number"  formControlName="firstName"  matInput  >
@@ -59,7 +65,7 @@ mat-input {  width: 20%; font-size: 9px;padding:3px;float:left; }
              </div>       
        
         
-      </div>   
+        
 
   </mat-card-content>
 
@@ -73,7 +79,7 @@ mat-input {  width: 20%; font-size: 9px;padding:3px;float:left; }
 
 
 <br>
-<div style="width:100%; text-align:center;">nombre total d'astéroïdes: {{DonneeNasa.page.size}}</div>
+<div style="width:100%; text-align:center;font-size:22px;">nombre total d'astéroïdes proches de la Terre : {{DonneeNasa.page.size}}</div>
 <br>
 
 
@@ -90,20 +96,20 @@ mat-input {  width: 20%; font-size: 9px;padding:3px;float:left; }
   <ng-template #thenBlock >
     
    
-<mat-card class="example-card" style="width:150px;float:left;font-size:10px;margin-left:10px;margin-bottom:5px;margin-top:5px;" >
+<mat-card class="example-card" style="width:350px;float:left;font-size:10px;margin-left:2.5%;margin-bottom:5px;margin-top:5px;margin-top:5px;" >
   <mat-card-header style="background-color: lightblue;margin-bottom:0px;">
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title style="font-size:9px;width:100%;">{{DonneeNasa.near_earth_objects[i].name_limited}}&nbsp;</mat-card-title>
-    <mat-card-subtitle style="font-size:6px;width:100%;">{{DonneeNasa.near_earth_objects[i].name}}</mat-card-subtitle>
+    <mat-card-title style="font-size:28px;width:100%;">{{DonneeNasa.near_earth_objects[i].name_limited}}&nbsp;</mat-card-title>
+    <mat-card-subtitle style="font-size:14px;width:100%;">{{DonneeNasa.near_earth_objects[i].name}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content  style="background-color: lightblue;margin-top:0px;" >
-    <div style="font-size:7px;width:100%;padding-top:2px;">date de 1<sup>er</sup> observation : {{DonneeNasa.near_earth_objects[i].orbital_data.first_observation_date}} </div>
-    <div style="font-size:7px;width:100%;padding-top:2px;">date de dernière observation : {{DonneeNasa.near_earth_objects[i].orbital_data.last_observation_date}} </div>
-    <div style="font-size:7px;width:100%;padding-top:2px;">diamètre maximum estimé :<br> {{DonneeNasa.near_earth_objects[i].estimated_diameter.kilometers.estimated_diameter_max}} Km</div>
-    <div style="margin-top:15px;font-size:6px;width:100%;" *ngIf="DonneeNasa.near_earth_objects[i].is_potentially_hazardous_asteroid; then thenBlock else elseBlock"></div>
-    <ng-template #thenBlock ><span style="color: red;">dangeureux</span></ng-template>
-    <ng-template #elseBlock>sans danger</ng-template>
-    <div style="margin-top:5px;font-size:6px;width:100%;"> <a style="text-decoration: none;cursor:pointer;font-size:11px;" target="_blank" href={{DonneeNasa.near_earth_objects[i].nasa_jpl_url}}>Fiche de la Nasa</a></div>
+    <div style="font-size:17px;width:100%;padding-top:2px;">date de 1<sup>er</sup> observation :<br> {{DonneeNasa.near_earth_objects[i].orbital_data.first_observation_date}} </div>
+    <div style="font-size:17px;width:100%;padding-top:2px;">date de dernière observation :<br> {{DonneeNasa.near_earth_objects[i].orbital_data.last_observation_date}} </div>
+    <div style="font-size:17px;width:100%;padding-top:2px;">diamètre maximum estimé :<br> {{DonneeNasa.near_earth_objects[i].estimated_diameter.kilometers.estimated_diameter_max}} Km</div>
+    <div style="margin-top:15px;font-size:16px;width:100%;" *ngIf="DonneeNasa.near_earth_objects[i].is_potentially_hazardous_asteroid; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock ><span style="color: red;font-size:22px;">dangeureux</span></ng-template>
+    <ng-template #elseBlock><span style="font-size:22px;">sans danger</span></ng-template>
+    <div style="margin-top:5px;width:100%;"> <a style="font-size:18px;text-decoration: none;cursor:pointer;" target="_blank" href={{replacerHttp(DonneeNasa.near_earth_objects[i].nasa_jpl_url)}}>Fiche de la Nasa</a></div>
   </mat-card-content>  
 </mat-card>
 
@@ -119,22 +125,22 @@ mat-input {  width: 20%; font-size: 9px;padding:3px;float:left; }
         <!-- les objects sont représentés seulement si ils répondent aux critère du formulaire-->
          <!-- à faire : éviter la répétiion du block HTML-->
 
-      <mat-card class="example-card" style="width:150px;float:left;font-size:10px;margin-left:10px;margin-bottom:5px;margin-top:5px;" >
-        <mat-card-header style="background-color: lightblue;margin-bottom:0px;">
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title style="font-size:9px;width:100%;">{{DonneeNasa.near_earth_objects[i].name_limited}}&nbsp;</mat-card-title>
-          <mat-card-subtitle style="font-size:6px;width:100%;">{{DonneeNasa.near_earth_objects[i].name }}</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content  style="background-color: lightblue;margin-top:0px;" >
-          <div style="font-size:7px;width:100%;padding-top:2px;">date de 1<sup>er</sup> observation : {{DonneeNasa.near_earth_objects[i].orbital_data.first_observation_date}} </div>
-          <div style="font-size:7px;width:100%;padding-top:2px;">date de dernière observation : {{DonneeNasa.near_earth_objects[i].orbital_data.last_observation_date}} </div>
-          <div style="font-size:7px;width:100%;padding-top:2px;">diamètre maximum estimé :<br> {{DonneeNasa.near_earth_objects[i].estimated_diameter.kilometers.estimated_diameter_max}} Km</div>
-          <div style="margin-top:15px;font-size:6px;width:100%;" *ngIf="DonneeNasa.near_earth_objects[i].is_potentially_hazardous_asteroid; then thenBlock else elseBlock"></div>
-          <ng-template #thenBlock ><span style="color: red;">dangeureux</span></ng-template>
-          <ng-template #elseBlock>sans danger</ng-template>
-          <div style="margin-top:5px;font-size:6px;width:100%;"> <a style="text-decoration: none;cursor:pointer;font-size:11px;" target="_blank" href={{DonneeNasa.near_earth_objects[i].nasa_jpl_url}}>Fiche de la Nasa</a></div>
-        </mat-card-content>  
-      </mat-card>
+         <mat-card class="example-card" style="width:350px;float:left;font-size:10px;margin-left:2.5%;margin-bottom:5px;margin-top:5px;margin-top:5px;" >
+          <mat-card-header style="background-color: lightblue;margin-bottom:0px;">
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title style="font-size:28px;width:100%;">{{DonneeNasa.near_earth_objects[i].name_limited}}&nbsp;</mat-card-title>
+            <mat-card-subtitle style="font-size:14px;width:100%;">{{DonneeNasa.near_earth_objects[i].name}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content  style="background-color: lightblue;margin-top:0px;" >
+            <div style="font-size:17px;width:100%;padding-top:2px;">date de 1<sup>er</sup> observation :<br> {{DonneeNasa.near_earth_objects[i].orbital_data.first_observation_date}} </div>
+            <div style="font-size:17px;width:100%;padding-top:2px;">date de dernière observation :<br> {{DonneeNasa.near_earth_objects[i].orbital_data.last_observation_date}} </div>
+            <div style="font-size:17px;width:100%;padding-top:2px;">diamètre maximum estimé :<br> {{DonneeNasa.near_earth_objects[i].estimated_diameter.kilometers.estimated_diameter_max}} Km</div>
+            <div style="margin-top:15px;font-size:16px;width:100%;" *ngIf="DonneeNasa.near_earth_objects[i].is_potentially_hazardous_asteroid; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock ><span style="color: red;font-size:22px;">dangeureux</span></ng-template>
+            <ng-template #elseBlock><span style="font-size:22px;">sans danger</span></ng-template>
+            <div style="margin-top:5px;width:100%;"> <a style="font-size:18px;text-decoration: none;cursor:pointer;" target="_blank" href={{replacerHttp(DonneeNasa.near_earth_objects[i].nasa_jpl_url)}}>Fiche de la Nasa</a></div>
+          </mat-card-content>  
+        </mat-card>
     </div>
     </ng-template>
 
