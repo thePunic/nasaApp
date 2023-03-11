@@ -1,5 +1,6 @@
 {
-  "name": "nasa-app",
+  "homepage" : "https://thepunic.github.io/nasaApp/",
+  "name": "nasaApp",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
