@@ -59,7 +59,7 @@ ngOnInit(){
 // variable qui récupère les deux champs du formulaire
 
 Criteria = this.formBuilder.group({
- firstName: ['0',Validators.required],  
+ diametre: ['0',Validators.required],  
   danger: ['']
 });
 
