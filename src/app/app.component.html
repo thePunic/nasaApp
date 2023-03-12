@@ -233,7 +233,7 @@ build
 
     <ng-template #elseBlock>
       
-      <div *ngIf="(DonneeNasa.near_earth_objects[i].is_potentially_hazardous_asteroid ===  Criteria.value.danger)&&(DonneeNasa.near_earth_objects[i].estimated_diameter.kilometers.estimated_diameter_max >  ConvertToInt(Criteria.value.firstName) )">
+      <div *ngIf="(DonneeNasa.near_earth_objects[i].is_potentially_hazardous_asteroid ===  Criteria.value.danger)&&(DonneeNasa.near_earth_objects[i].estimated_diameter.kilometers.estimated_diameter_max >  ConvertToInt(Criteria.value.diametre) )">
 
         <!-- les objects sont représentés seulement si ils répondent aux critère du formulaire-->
          <!-- à faire : éviter la répétiion du block HTML-->
