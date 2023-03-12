@@ -49,6 +49,119 @@ build
             <mat-radio-group  [(ngModel)]="selected" formControlName="danger" >
               <mat-label>menace pour la terre :</mat-label>
                 <mat-radio-button  [value]="true"> dangereux </mat-radio-button>
+13
+<div style="position:relative;width:100%;height:65px;background-color:#15803d;font-weight:bold;font-size:34px;
+14
+line-height:25px;color:white;padding:15px; box-sizing: border-box;">
+15
+TEST PROGERIS
+16
+​
+17
+​
+18
+</div> 
+19
+<style>
+20
+mat-form-field {  width: 20%; font-size: 22px;padding:3px;float:left; }
+21
+mat-input {  width: 20%; font-size: 22px;padding:3px;float:left; }
+22
+mat-label {  font-size: 22px;height:100px; }
+23
+​
+24
+​
+25
+​
+26
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+27
+  margin-left: 0px;
+28
+  
+29
+}
+30
+​
+31
+build 
+32
+​
+33
+  </style>
+34
+<!--début du formulaire-->
+35
+​
+36
+<mat-form appearance="fill" [formGroup]="Criteria" class="form-container" style="padding:0px;margin-top:0px;">
+37
+  <mat-card style="padding:0px;margin-top:0px;">
+38
+    <mat-card-header style="padding:0px;margin-top:0px;">
+39
+      
+40
+    </mat-card-header>
+41
+    <mat-card-content>
+42
+     
+43
+   
+44
+​
+45
+      
+46
+​
+47
+​
+48
+        <div style="float: left;margin-right:50px;">
+49
+            <mat-radio-group  [(ngModel)]="selected" formControlName="danger" >
+50
+              <mat-label>menace pour la terre :</mat-label>
+51
+                <mat-radio-button  [value]="true"> dangereux </mat-radio-button>
+52
+                <mat-radio-button  [value]="false"> non dangereux </mat-radio-button>
+53
+                <mat-radio-button  #start [value]="0"> indifferent </mat-radio-button>
+54
+            </mat-radio-group>
+55
+        </div>
+56
+   
+57
+​
+58
+​
+59
+​
+60
+        <div style="float: left" >
+61
+          <mat-form-field class="full-width" style="width:300px">
+62
+            <mat-label>Diamètre supérieur à (Km) :</mat-label>
+63
+            <input  type="number"  formControlName="diametre"  matInput  >
+64
+          </mat-form-field>
+65
+             </div>       
+66
+       
+67
+        
+68
+        
+
                 <mat-radio-button  [value]="false"> non dangereux </mat-radio-button>
                 <mat-radio-button  #start [value]="0"> indifferent </mat-radio-button>
             </mat-radio-group>
@@ -89,7 +202,7 @@ build
   <div style="margin-top:15px;font-size:6px;width:100%;"
   
   
-  *ngIf="((ConvertToInt(Criteria.value.danger)===0 || ConvertToInt(Criteria.value.danger)===undefined ) && (DonneeNasa.near_earth_objects[i].estimated_diameter.kilometers.estimated_diameter_max >  ConvertToInt(Criteria.value.firstName))); then thenBlock else elseBlock"></div>
+  *ngIf="((ConvertToInt(Criteria.value.danger)===0 || ConvertToInt(Criteria.value.danger)===undefined ) && (DonneeNasa.near_earth_objects[i].estimated_diameter.kilometers.estimated_diameter_max >  ConvertToInt(Criteria.value.diametre))); then thenBlock else elseBlock"></div>
  <!-- les objects sont représentés seulement si ils répondent aux critère du formulaire-->
 
 
