@@ -93,13 +93,13 @@ return parseFloat(valeur)
 
 }
 
-
+/*
 replacerHttp(url:string){
 
 return url.replace("http","https")
   
 }
-
+*/
 
 }
 
